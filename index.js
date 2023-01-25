@@ -5,10 +5,10 @@ import postRouter from "./routes/posts.js";
 
 const app = express();
 
-app.use("/posts", postRouter);
 app.use(express.json({ limit: "30mb", extends: true }));
 app.use(express.urlencoded({ limit: "30mb", extends: true }));
 app.use(cors());
+app.use("/posts", postRouter);
 
 const CONNECTION_URL =
   "mongodb+srv://CaptainD:RooPoo$36@cluster0.jz469u5.mongodb.net/?retryWrites=true&w=majority";
